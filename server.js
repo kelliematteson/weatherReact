@@ -20,7 +20,9 @@ mongoose.connect(process.env.MONGO_URI, {
     useUnifiedTopology: true
 })
 
-mongoose.connection.once('connected', () => ('Mongoose is ready!'));
+mongoose.connection.once('connected', () => {
+    console.log('MongoDB database connection successful!')
+});
 
 //Port Listener
 app.listen(PORT, () =>{
